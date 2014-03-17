@@ -36,6 +36,7 @@
 # Copyright 2014 Fabrizio Ruggeri / 3logic MK.
 #
 class owncloud {
-
-
+  class { '::owncloud::params': } ->
+  class { '::owncloud::webserver': } ->
+  Class['owncloud']
 }
