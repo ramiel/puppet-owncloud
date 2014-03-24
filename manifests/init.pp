@@ -35,7 +35,11 @@
 #
 # Copyright 2014 Fabrizio Ruggeri / 3logic MK.
 #
-class owncloud {
+class owncloud (
+  $hostname = 'datacenter.3logic.it'
+  ,$version = '6.0.2'
+  ,$installation_path =  '/var/www/owncloud'
+){
   class { '::owncloud::params': } ->
   class { '::owncloud::webserver': } ->
   Class['owncloud']
